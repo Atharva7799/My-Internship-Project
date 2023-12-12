@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .fa-paper-plane {
+            color: #ff0000; 
+        }
+
+        .fa-phone {
+            color: #ff0000; 
+        }
+        nav.fas {
+            display: none;
+        }
+
+        .sidemenu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: -250px; 
+            width: 250px;
+            height: 100%;
+            background: #ff004f;
+            padding-top: 50px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .sidemenu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            margin: 20px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 600px) {
+            #header {
+                background-image: url(img/phone-background.png);
+            }
+
+            .header-text {
+                margin-top: 100%;
+                font-size: 16px;
+            }
+
+            .header-text h1 {
+                font-size: 30px;
+            }
+
+            nav.fas {
+                display: block;
+                font-size: 25px;
+                cursor: pointer;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .sidemenu {
+                display: block;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <div class="logo-section">
+                <img src="img/Logoo.png" class="logo" alt="Logo">
+            </div>
+            
+            <div class="nav-section">
+                <nav>
+                    <ul id="sidemenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <nav class="fas" onclick="toggleSidePanel()">
+                    &#9776; 
+                </nav>
+                <div class="sidemenu" id="sidemenu">
+                    <span class="close-btn" onclick="toggleSidePanel()">&#10006;</span> <!-- X Mark -->
+                    <a href="#">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="header-text">
+                    <h1>Hi, I'm Atharva Deorukhkar</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!----------About--------->
+    
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-column-1">
+                    <img src="img/user.png" alt="User Image">
+                </div>
+                <div class="about-column-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hi, I'm Atharva Deorukhkar. I've completed my graduation in the field of B.Tech Computer science and engineering from Sandip University, Nashik.
+                        Currently, I'm doing some internships to gain some experience on various projects. I've proficiency in <span>Languages: SQL, Python, HTML, CSS.</span>
+                        As a fresher, I want to use my creative skills that I am familiar with, which will benefit the organization in the long run and also help me
+                        in building my professional career.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links active-link-1" onclick="opentab('Experience')">Experience</p>
+                        <p class="tab-links active-link-2" onclick="opentab('Education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li><span>Languages</span><br>SQL, Python, HTML, CSS</li>
+                        </ul>
+                    </div>
+                   
+                    <div class="tab-contents" id="Experience">
+                        <ul>
+                            <li><span>01-2020</span><br>Inplant Training at Lotus Computers </li>
+                            <li><span>12-2023</span><br>Front-End Web Development</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>2017</span><br>Secondary Education from KVISP, Nasik</li>
+                            <li><span>2019</span><br>Higher Secondary from JDC Bytco Nasik</li>
+                            <li><span>2023</span><br>B.Tech in Computer Science and Engineering from Sandip University</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------Portfolio---->
+    <div class="portfolio">
+        <div class="container">
+            <h1 class="sub-title">Portfolio</h1>
+             <div class="work-list">
+                <div class="work">
+                    <img src="img/work.png">
+                    <h2>Personal Portfolio Website</h2>
+                    <p>This is Personal Portfolio Webpage which will help people to know more about my professional background.</p>
+                    <a href="http://127.0.0.1:5500/index.html">
+                        <h3>Click Here</h3>
+                    </a>
+                </div>
+             </div>
+        </div>
+    </div>
+
+    <!--------Contact----->
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h4 class="sub-title">Contact Me</h4>
+                    <p><i class="fa-solid fa-paper-plane"></i> atharvadeorukhkar2001@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 9503246786</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/Atharva_Deorukhkar" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/_atharvaaa_7799" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/atharva079" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/Atharva_Deorukhkar" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <a href="img/Atharva Resume.pdf" download class="btn btn2">Download Resume</a>
+
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu") 
+        function openmenu(){
+            sidemenu.style.right = "0";
+
+        }
+        function closemenu(){
+            sidemenu.style.right = "-250";
+
+        }
+            
+    </script>
+
+</body>
+</html>
